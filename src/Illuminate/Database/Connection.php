@@ -332,7 +332,7 @@ class Connection implements ConnectionInterface
      */
     public function table($table, $as = null)
     {
-        return $this->query()->from($table, $as);
+        return $this->query()->from("{$this->getDatabaseName()}.{$table}", $as);
     }
 
     /**
